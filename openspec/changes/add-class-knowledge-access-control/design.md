@@ -4,6 +4,17 @@
 
 项目目前只有 OpenSpec 配置和 README，没有既有应用、数据模型或运行时可复用。本设计采用 Flask、SQLite 与 Docker Compose 实现单体 Web 应用；行为契约见三个 delta specs。
 
+## 本次更新记录
+
+### 新增
+
+- 记录后续检索变更在既有 Compose 基础上加入 MySQL、Qdrant、OpenAI API Key 与两个独立 MySQL 密码。
+- 记录 MySQL 持久卷的首次初始化与显式密码轮换要求。
+
+### 删除或替代
+
+- 替代将 Compose 描述为仅包含应用与 SQLite 持久卷的运行时假设；SQLite 主数据设计和本变更的认证边界不变。
+
 ## Goals / Non-Goals
 
 **Goals:**

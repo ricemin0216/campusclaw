@@ -1,5 +1,11 @@
 # Tasks
 
+## 本次更新记录
+
+- 新增未完成的 1.4：补充 `.env` 中 MySQL 应用/管理员密码职责及已有持久卷显式轮换或重建要求。
+- 5.2 仍保持未完成，须在提供有效 OpenAI API Key 后完成真实 Compose 检索冒烟验证。
+- 其余已勾选任务的实现与验证结论不变。
+
 ## 1. 检索基础设施与配置
 
 - [x] 1.1 在 Compose 中新增 MySQL 8（含 ngram 全文检索配置）和 Qdrant 服务、持久卷、健康检查与应用启动依赖；验证：`docker compose config` 成功，MySQL、Qdrant 与应用均通过健康检查。

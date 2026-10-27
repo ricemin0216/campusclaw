@@ -4,6 +4,17 @@
 
 当前 Flask 应用将用户、班级、材料元数据和 UTF-8 正文保存于 SQLite，并已在所有材料入口实施服务端班级校验。Docker Compose 目前仅运行应用和 SQLite 持久卷。为满足检索结果必须从 MySQL 切片正文生成的约束，本设计保留 SQLite 作为现有业务主数据源，并新增 MySQL 作为可重建的检索正文索引、Qdrant 作为可重建的向量索引。动机和行为契约见 `proposal.md` 与 `specs/knowledge-retrieval/spec.md`。
 
+## 本次更新记录
+
+### 新增
+
+- 明确 MySQL 应用账户与管理员账户的密码职责、Compose 的必填变量校验以及持久卷首次初始化语义。
+- 将 Qdrant 容器健康检查记录为 TCP 6333 探测，匹配当前 Compose 实现。
+
+### 删除或替代
+
+- 替代 Qdrant 使用 HTTP 健康端点的旧描述；检索架构、存储边界和 API 契约不变。
+
 ## Goals / Non-Goals
 
 **Goals:**
